@@ -31,15 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <head>
-          <meta name="version" content={buildConfig.commitId} />
-          <link rel="manifest" href="/site.webmanifest"></link>
-          <script src="/serviceWorkerRegister.js" defer></script>
-        </head>
-        <body>{children}</body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <head>
+        <meta name="version" content={buildConfig.commitId} />
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <script src="/serviceWorkerRegister.js" defer></script>
+      </head>
+      <body>
+        <ClerkProvider>{children}</ClerkProvider>
+      </body>
+    </html>
   );
 }
