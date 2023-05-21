@@ -152,6 +152,9 @@ export class ChatGPTApi implements LLMApi {
         const res = await fetch(chatPath, chatPayload);
         clearTimeout(requestTimeoutId);
 
+        console.log("[W-RESPONSE]");
+        console.log(res.body);
+
         const resJson = await res.json();
         const message = this.extractMessage(resJson);
         options.onFinish(message);
